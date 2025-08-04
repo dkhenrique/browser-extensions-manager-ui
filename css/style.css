@@ -1,0 +1,423 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Layout */
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  /* Colors - Neutral */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsla(200, 60%, 99%, 1);
+
+  /* Colors - Red */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* Gradients */
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  /* Typography */
+  --font-family: "Noto Sans", sans-serif;
+  --font-size-paragraph: 16px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--dark-gradient);
+  color: var(--neutral-0);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+/* Tema Claro */
+body.light-theme {
+  background: var(--light-gradient);
+  color: var(--neutral-900);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  background: var(--neutral-800);
+  border-radius: 14px;
+  border: 1px solid var(--neutral-700);
+  transition: all 0.3s ease;
+}
+
+/* Header - Tema Claro */
+body.light-theme .header {
+  background: var(--neutral-0);
+  border-color: var(--neutral-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo SVG - Tema Claro */
+body.light-theme .header .logo {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(78%) saturate(1015%)
+    hue-rotate(214deg) brightness(92%) contrast(96%);
+}
+
+.header button {
+  background: var(--neutral-700);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão - Tema Claro */
+body.light-theme .header button {
+  background: var(--neutral-200);
+}
+
+body.light-theme .header button:hover {
+  background: var(--neutral-300);
+}
+
+.header button:hover {
+  background: var(--neutral-600);
+}
+
+.header button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Section Header */
+section > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+section > header h2 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-0);
+}
+
+/* Título - Tema Claro */
+body.light-theme section > header h2 {
+  color: var(--neutral-900);
+}
+
+/* Filter Buttons */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--neutral-800);
+  padding: 4px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Filtros - Tema Claro */
+body.light-theme .filters {
+  background: var(--neutral-100);
+}
+
+.filter-button {
+  background: transparent;
+  border: none;
+  color: var(--neutral-300);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all 0.3s ease;
+}
+
+/* Botões de Filtro - Tema Claro */
+body.light-theme .filter-button {
+  color: var(--neutral-600);
+}
+
+body.light-theme .filter-button:hover {
+  background: var(--neutral-200);
+  color: var(--neutral-900);
+}
+
+body.light-theme .filter-button.active {
+  background: var(--neutral-900);
+  color: var(--neutral-0);
+}
+
+.filter-button:hover {
+  background: var(--neutral-700);
+  color: var(--neutral-0);
+}
+
+.filter-button.active {
+  background: var(--neutral-0);
+  color: var(--neutral-900);
+}
+
+/* Extensions Grid */
+.extensions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+}
+
+/* Extension Card */
+.extension-card {
+  background: var(--neutral-800);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--neutral-700);
+}
+
+/* Cards - Tema Claro */
+body.light-theme .extension-card {
+  background: var(--neutral-0);
+  border-color: var(--neutral-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.extension-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--neutral-600);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.extension-card.inactive {
+  opacity: 0.6;
+}
+
+.extension-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-0);
+  margin-bottom: 0.5rem;
+}
+
+/* Título do Card - Tema Claro */
+body.light-theme .card-content h3 {
+  color: var(--neutral-900);
+}
+
+.card-content p {
+  font-size: var(--font-size-paragraph);
+  color: var(--neutral-300);
+  line-height: 1.5;
+}
+
+/* Descrição do Card - Tema Claro */
+body.light-theme .card-content p {
+  color: var(--neutral-600);
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: transparent;
+  border: 1px solid var(--red-500);
+  color: var(--red-500);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.remove-btn:hover {
+  background: var(--red-500);
+  color: var(--neutral-0);
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--neutral-600);
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--neutral-300);
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--red-500);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+  background-color: var(--neutral-0);
+}
+
+/* Attribution */
+.attribution {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--neutral-700);
+  font-size: 0.875rem;
+  color: var(--neutral-300);
+}
+
+.attribution a {
+  color: var(--neutral-0);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.attribution a:hover {
+  color: var(--red-400);
+}
+
+/* Tema Claro - Attribution */
+body.light-theme .attribution {
+  border-top-color: var(--neutral-300);
+  color: var(--neutral-600);
+}
+
+body.light-theme .attribution a {
+  color: var(--neutral-800);
+}
+
+body.light-theme .attribution a:hover {
+  color: var(--red-500);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  section > header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .extensions {
+    grid-template-columns: 1fr;
+  }
+
+  .card-footer {
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .remove-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+
+  .header img {
+    height: 28px;
+  }
+
+  section > header h2 {
+    font-size: 1.25rem;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filter-button {
+    flex: 1;
+    text-align: center;
+  }
+}
