@@ -36,8 +36,8 @@ Os usuários devem ser capazes de:
 
 ### Links
 
-- URL da Solução: [GitHub Repository](https://github.com/your-username/browser-extensions-manager-ui)
-- URL do Site: [Live Demo](https://your-live-site-url.com)
+- URL da Solução: [GitHub Repository](https://github.com/dkhenrique/browser-extensions-manager-ui)
+- URL do Site: [Live Demo](https://browser-extensions-manager-ui-six.vercel.app/)
 
 ## Meu Processo
 
